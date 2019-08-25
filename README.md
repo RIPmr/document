@@ -4,7 +4,7 @@ Documentation of assets I published on Unity Asset Store: https:huanime.com.cn/A
 ## Three published assets:
 ### RaindropFX Pro
 [Asset Store Link](http://u3d.as/1rjA)
-<img class="phframe" src="_pics/RFXP/(1).png" />
+<img class="phframe" src="docs/_pics/RFXP/(1).png" />
 
 ### RaindropFX Lite
 [Asset Store Link](http://u3d.as/14V0)
