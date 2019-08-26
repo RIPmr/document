@@ -1,5 +1,5 @@
 # Assets Ducumentation
-Documentation of assets I published on Unity Asset Store: https://huanime.com.cn/AssetsDocumentation/.  
+Documentation of assets I published on Unity Asset Store: https://huanime.com.cn/document/.  
 
 ## Three published assets:
 ### RaindropFX Pro
