@@ -126,6 +126,10 @@ Congratulations! You have learned the basics. For more detailed parameter descri
 
     // debug result
     foreach (Vector3 vt in normal) Debug.Log(vt);
+	
+
+## Support
+If you have any questions, comments, or requests for new features, please email me directly at: hztmailbox@gmail.com.
 
 </br>
 </br>

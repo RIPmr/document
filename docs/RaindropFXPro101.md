@@ -4,7 +4,7 @@ img {
 }
 </style>
 
-# RaindropFX - Pro
+# RaindropFX - Pro (1.01)
 
 Easy to use realistic camera lens raindrop animation effects.
 
