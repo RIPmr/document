@@ -77,7 +77,7 @@ Congratulations! You have learned the basics. For more detailed parameter descri
 <div align=center><img width="70%" src="_pics/SM/(21).png"/></div>
 
 
-## 3 System options
+## 3 Script examples
 ### 3-1 Create spline and tube mesh
 	// create empty gameobject
     GameObject splineMesh = new GameObject();
