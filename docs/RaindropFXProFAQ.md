@@ -38,8 +38,8 @@ FAQ.
 
 ## Q: Is it possible to use RaindropFX Pro on a glass material to use it on windows etc.?
 ### A: {docsify-ignore}
-	Object space version is under development  
-	you can find a preview video at forum:   
+	Preview version of object space version RaindropFX has been released and included in version 1.50  
+	you can find a preview video of the final version at forum:   
 
 https://forum.unity.com/threads/raindropfx-realistic-camera-lens-rain-effect.519068/#post-3402707
 

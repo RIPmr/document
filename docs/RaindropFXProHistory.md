@@ -35,9 +35,6 @@ Revision History.
 ### First Release
 - Base functions implemented.
 
-### Paper
-- HU Zhongtian, YE Lu, Real-time simulation method of water movement on object surface[J]. Computer Engineering, 2018, 44(8):243-250.
-
 </br>
 </br>
 
