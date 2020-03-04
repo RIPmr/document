@@ -37,10 +37,10 @@ Please choose your installation method according to the actual situation :
 #### 1.For unity 2018.2 or higher
 If you create your project using HDRP (High-Definition Render Pipeline) or LWRP (Lightweight Render Pipeline) template, Post Processing Stack (v2) will be included in your project automatically, you do not need to do anything.
 
-<div align=center><img width="50%" src="_pics/RFXP_150/(8).png"/></div>
+<div align=center><img width="70%" src="_pics/RFXP_200/pipe.png"/></div>
 Otherwise, you need to use the Package Manager or GitHub to install the Post Processing Stack (v2) :
 
-<div align=center><img width="80%" src="_pics/RFXP_150/(9).png"/></div>
+<div align=center><img width="70%" src="_pics/RFXP_150/(9).png"/></div>
 
 #### 2.For unity 5.6.1-2018.1
 Use the GitHub installation. The installation method is detailed in the installation documentation in the github project (https://github.com/Unity-Technologies/PostProcessing).
@@ -86,9 +86,9 @@ please try to keep the UV island orientation consistent and try to divide the UV
 
 <div align=center><img width="50%" src="_pics/RFXP_200/shader.png"/></div>
 
-2. Add 'Command Buffer Blur Refraction' and 'Material Linker' to your model object. 
-They will try to find the target material (main material of your model) automatically, 
-if they failed to get the correct material or if you changed the material of model after scripts have been added, please reset 'Target Mat' manually.
+2. Add 'Material Linker' to your model. 
+'Material Linker' will try to find the target material (main material of your model) automatically, 
+if the component failed to get the correct material or if you changed the material of model after scripts have been added, please reset 'Target Mat' manually.
 
 <div align=center><img width="50%" src="_pics/RFXP_200/target.png"/></div>
 
