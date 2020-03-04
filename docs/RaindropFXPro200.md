@@ -30,11 +30,11 @@ Easy to use realistic camera lens raindrop animation effects.
 !> **Important** The post processing stack (v2) must be installed before you can continue.
 You can either use the GitHub or Package Manager installation. 
 
-Please choose your installation method according to the actual situation :
-#### 1.For SRP in unity 2018.4 or higher
-Since version 2018.4, HDRP and URP using their built-in post-processing stack instead of PPV2, so current version of RaindropFX is not supported.
+!> **Important** Since Unity 2018.4, HDRP and URP using their built-in post-processing 
+stack instead of PPV2, so current version of RaindropFX is not supported.
 
-#### 2.For unity 2018.2 or higher
+Please choose your installation method according to the actual situation :
+#### 1.For unity 2018.2 or higher
 If you create your project using HDRP (High-Definition Render Pipeline) or LWRP (Lightweight Render Pipeline) template, Post Processing Stack (v2) will be included in your project automatically, you do not need to do anything.
 
 <div align=center><img width="50%" src="_pics/RFXP_150/(8).png"/></div>
@@ -42,14 +42,14 @@ Otherwise, you need to use the Package Manager or GitHub to install the Post Pro
 
 <div align=center><img width="80%" src="_pics/RFXP_150/(9).png"/></div>
 
-#### 3.For unity 5.6.1-2018.1
+#### 2.For unity 5.6.1-2018.1
 Use the GitHub installation. The installation method is detailed in the installation documentation in the github project (https://github.com/Unity-Technologies/PostProcessing).
 
-#### 4.For unity 5.4.3-5.6
-Post processing stack (v2) may not work correctly with those old versions unity. If you want to use RaindropFX in those old versions unity, see section 5 legacy version.
+#### 3.For unity 5.4.3-5.6
+Post processing stack (v2) may not work correctly with those old versions unity. If you want to use RaindropFX in those old versions unity, you can choose RaindropFX Lite.
 
 ### 2-1-2 Download RaindropFX to your project {docsify-ignore}
-If you have an old version RaindropFX v0.5.0, delete it first, then download and import RaindropFX V1.0.1 to your project, and you will see those files:
+If you have an old version RaindropFX, delete it first, then download and import new RaindropFX to your project, and you will see those files:
 
 <div align=center><img width="20%" src="_pics/RFXP_200/files.png"/></div>
 
