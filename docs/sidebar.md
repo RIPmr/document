@@ -2,7 +2,6 @@
 - RaindropFX Pro
 	+ [2.0.0](RaindropFXPro200)
 	+ [1.5.0](RaindropFXPro150)
-	+ [1.0.1](RaindropFXPro101)
 	+ [Revision History](RaindropFXProHistory)
 	+ [FAQ](RaindropFXProFAQ)
 - [RaindropFX Lite](RaindropFXLite)

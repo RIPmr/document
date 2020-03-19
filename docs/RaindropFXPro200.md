@@ -28,25 +28,13 @@ Easy to use realistic camera lens raindrop animation effects.
 ### 2-1 Screen space version
 ### 2-1-1 Install post processing stack V2 {docsify-ignore}
 !> **Important** The post processing stack (v2) must be installed before you can continue.
-You can either use the GitHub or Package Manager installation. 
 
 !> **Important** Since Unity 2018.4, HDRP and URP using their built-in post-processing 
 stack instead of PPV2, so current version of RaindropFX is not supported.
 
-Please choose your installation method according to the actual situation :
-#### 1.For unity 2018.2 or higher
-If you create your project using HDRP (High-Definition Render Pipeline) or LWRP (Lightweight Render Pipeline) template, Post Processing Stack (v2) will be included in your project automatically, you do not need to do anything.
+It's recommended to use the Package Manager to install the latest version of post-processing stack :
 
-<div align=center><img width="70%" src="_pics/RFXP_200/pipe.png"/></div>
-Otherwise, you need to use the Package Manager or GitHub to install the Post Processing Stack (v2) :
-
-<div align=center><img width="70%" src="_pics/RFXP_150/(9).png"/></div>
-
-#### 2.For unity 5.6.1-2018.1
-Use the GitHub installation. The installation method is detailed in the installation documentation in the github project (https://github.com/Unity-Technologies/PostProcessing).
-
-#### 3.For unity 5.4.3-5.6
-Post processing stack (v2) may not work correctly with those old versions unity. If you want to use RaindropFX in those old versions unity, you can choose RaindropFX Lite.
+<div align=center><img width="70%" src="_pics/RFXP_200/packageMgr.png"/></div>
 
 ### 2-1-2 Download RaindropFX to your project {docsify-ignore}
 If you have an old version RaindropFX, delete it first, then download and import new RaindropFX to your project, and you will see those files:
