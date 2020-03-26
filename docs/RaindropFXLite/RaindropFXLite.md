@@ -1,9 +1,3 @@
-<style>
-img {
-	margin: 10px;
-}
-</style>
-
 # RaindropFX - Lite
 
 Easy to use C# scripts for realistic camera lens raindrop animation effects.

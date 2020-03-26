@@ -1,9 +1,3 @@
-<style>
-img {
-	margin: 10px;
-}
-</style>
-
 # RaindropFX - Pro (2.00)
 
 Easy to use realistic camera lens raindrop animation effects.
@@ -85,6 +79,7 @@ if the component failed to get the correct material or if you changed the materi
 <div align=center><img width="60%" src="_pics/RFXP_200/objectSpaceVer.png"/></div>
 
 ## 3 System options
+<center>
 <table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="600" style="border-collapse:collapse;mso-table-layout-alt:fixed;border:none;
  mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:1184;mso-padding-alt:
  0cm 5.4pt 0cm 5.4pt">
@@ -729,7 +724,8 @@ if the component failed to get the correct material or if you changed the materi
   Usually do not need to tick.<o:p></o:p></span></p>
   </td>
  </tr>
-</tbody></table></div>
+</tbody></table>
+</center>
 
 
 ## 4 Bonus content

@@ -1,9 +1,3 @@
-<style>
-img {
-	margin: 10px;
-}
-</style>
-
 # RaindropFX - Pro (1.50)
 
 Easy to use realistic camera lens raindrop animation effects.

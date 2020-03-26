@@ -1,9 +1,3 @@
-<style>
-img {
-	margin: 10px;
-}
-</style>
-
 # RaindropFX - Pro
 
 FAQ.

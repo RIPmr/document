@@ -1,9 +1,3 @@
-<style>
-img {
-	margin: 10px;
-}
-</style>
-
 # SplineMesher
 
 A script used to generate tube mesh along spline curve.
