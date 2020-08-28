@@ -2,6 +2,12 @@
 
 Revision History.
 
+## Version 2.5.0
+### Added {docsify-ignore}
+	- dynamic wipe effect
+	- droplet pixelization for pixel style games
+	- screen rain mask
+
 ## Version 2.0.0
 ### Added {docsify-ignore}
 	- Radial wind

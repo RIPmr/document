@@ -1,6 +1,8 @@
 - **Assets for Unity 3D**
 - [RaindropFX Pro](README.md)
+	+ [[HDRP] 2.5.0](RaindropFXPro/RaindropFXHDRP250)
 	+ [[HDRP] 2.0.0](RaindropFXPro/RaindropFXHDRP200)
+	+ [[PPV] 2.5.0](RaindropFXPro/RaindropFXPro250)
 	+ [[PPV] 2.0.0](RaindropFXPro/RaindropFXPro200)
 	+ [[PPV] 1.5.0](RaindropFXPro/RaindropFXPro150)
 	+ [Revision History](RaindropFXPro/RaindropFXProHistory)
