@@ -58,11 +58,19 @@ Assets for Unity 3D
 	</a>
 </div>
 
-<h2><a href="#SplineMesher/SplineMesher" style="text-decoration: none;">SplineMesher</a></h2>
+<h2><a href="#SplineMesherPro/SplineMesherPro" style="text-decoration: none;">SplineMesher Pro</a></h2>
 
 <div class="box">
-	<a href="#SplineMesher/SplineMesher">
-		<img class="phframe" src="_pics/Covers/SplineMesher.png" />
+	<a href="#SplineMesherPro/SplineMesherPro">
+		<img class="phframe" src="_pics/Covers/SplineMesherPro.png" />
+	</a>
+</div>
+
+<h2><a href="#SplineMesherLite/SplineMesherLite" style="text-decoration: none;">SplineMesher Lite</a></h2>
+
+<div class="box">
+	<a href="#SplineMesherLite/SplineMesherLite">
+		<img class="phframe" src="_pics/Covers/SplineMesherLite.png" />
 	</a>
 </div>
 

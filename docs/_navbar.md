@@ -3,4 +3,5 @@
 * [![Index](https://icongr.am/clarity/book.svg?color=808080&size=32)](#)
 	* [RaindropFX Pro](RaindropFXPro/RaindropFXPro200)
 	* [RaindropFX Lite](RaindropFXLite/RaindropFXLite)
-	* [Spline Mesher](SplineMesher/SplineMesher)
+	* [Spline Mesher Pro](SplineMesherPro/SplineMesherPro)
+	* [Spline Mesher Lite](SplineMesherLite/SplineMesherLite)
