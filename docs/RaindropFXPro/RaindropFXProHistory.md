@@ -2,6 +2,22 @@
 
 Revision History.
 
+## Version 3.0.0
+### Fixed {docsify-ignore}
+	- shader error in HDRP 10.2.2
+
+### Added {docsify-ignore}
+	- half batches decreased (CPU solver)
+	- dynamic wipe for object space version (CPU solver)
+	- raindrop painting (screen space, CPU solver)
+	- force LUT (affecting the flow direction of water droplets on object surface)
+	- assembly definition
+	- dynamic scaling of full screen raindrop texture (no longer need to preset the size at the beginning of the game)
+	- controllable fogging speed
+	- GPU screen space solver (beta)
+	- GPU object space solver (beta)
+	- fluids can interact with normal map (object space, GPU solver)
+
 ## Version 2.5.0
 ### Added {docsify-ignore}
 	- dynamic wipe effect
@@ -52,7 +68,7 @@ Revision History.
 	- Wind
 
 ## Version 0.5.0
-### First Release
+### First Release {docsify-ignore}
 	- Base functions implemented
 
 </br>
