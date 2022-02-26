@@ -11,10 +11,16 @@ Easy to use realistic camera lens raindrop animation effects for URP 10.3.1+.
 3. Then download and import new version RaindropFX URP package to your project.
 
 ### 1-1 Post processing stack setup
-Find ‘Forward Renderer Data’ asset of your rendering pipeline, then add ‘RFX Blur Pass’ and ‘Raindrop FX_URP Render Feature’ to ‘Renderer Features’:
+1. Find ‘Forward Renderer Data’ asset of your rendering pipeline, then add ‘RFX Blur Pass’ and ‘Raindrop FX_URP Render Feature’ to ‘Renderer Features’:
 
 <div align=center><img width="60%" src="_pics/RFXU_100/RFXU100_PIC_ (1).png"/></div>
 <div align=center><img width="60%" src="_pics/RFXU_100/RFXU100_PIC_ (2).png"/></div>
+
+2. Then assign ‘Blur’ material located at ‘RaindropFXPro_URP/Resources/Materials’ to ‘Blur Material’ slot of ‘RFX Blur Pass’;
+<div align=center><img width="90%" src="_pics/RFXU_100/RFXU100_PIC_ (29).png"/></div>
+
+3. Finally assign ‘Screen Blend’ shader located at ‘RaindropFXPro_URP/Shaders/Screen’ to ‘Blend Shader’ slot of ‘RaindropFX_URP Render Feature’.
+<div align=center><img width="90%" src="_pics/RFXU_100/RFXU100_PIC_ (30).png"/></div>
 
 ## 2 Raindrop solver
 ### 2-1 Screen space version
