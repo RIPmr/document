@@ -2,6 +2,7 @@
 
 FAQ.
 
+
 ## Q: I can't see raindrops in HDRP even if I have added the post effect to volume component?
 ### A:  {docsify-ignore}
 	Please add RaindropFX_HDRP and RaindropFX_GPU to 'After Post Process' 
@@ -27,7 +28,7 @@ FAQ.
 
 ## Q: How is the Lite version different from the Pro version?
 ### A:  {docsify-ignore}
-		RaindropFX PRO can be used in Standard/High-Definition Rendering Pipeline (URP version is under development).  
+		RaindropFX PRO can be used in Standard/Scriptable Rendering Pipeline (URP and HDRP).  
 		Lite version (RaindropFX 0.5.0) does not support SRP (HDRP/URP/custom), it only support Deferred and Forward rendering and has fewer features (screen fog, wind turbulence ...), but it can work without Unity's Post Processing Stack, and can work with older versions (5.3.4 or higher) Unity.
 
 ## Q: Does it support waterdrops without a physics/fall/wind effect, so only the drops?
