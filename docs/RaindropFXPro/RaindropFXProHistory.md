@@ -1,8 +1,46 @@
-# RaindropFX - Pro
+# RaindropFX - Changes
 
 Revision History.
 
-## Version 3.0.0
+## [URP] Version 1.5.1
+### Added {docsify-ignore}
+	- Support for URP 14.0+ added
+	- Screen space GPU solver
+	- Kawas blur is implemented to replace Gaussian blur (you can get 4 times performance increasement without lose quality)
+
+### Fixed {docsify-ignore}
+	- 'hasAdvancedMode' error in Unity 2021+
+	- Parameter range limit is broken
+
+## [HDRP] Version 3.2.0
+### Added {docsify-ignore}
+	- improved raindrop visual quality (GPU solver)
+	- dynamic wipe for GPU solver
+	- raindrop size control for GPU solver
+	- lifetime control for GPU solver
+
+### Fixed {docsify-ignore}
+	- GPU solver generate non-uniform distribution raindrops
+	- error while using new input system
+	- 'hasAdvancedMode' error in Unity 2021+
+
+### Removed {docsify-ignore}
+	- mouse paint function is deprecated
+
+## [URP] Version 1.0.0
+### First Release {docsify-ignore}
+	- All basic functions EXCEPT GPU solver
+
+## [STD] Version 2.5.3
+### Added {docsify-ignore}
+	- assembly definition added
+
+### Fixed {docsify-ignore}
+	- Non-uniform raindrop distribution while using GPU solver
+	- broken example scene is recreated
+	- namespace changed to 'STD'
+
+## [HDRP] Version 3.0.0
 ### Fixed {docsify-ignore}
 	- shader error in HDRP 10.2.2
 
@@ -18,13 +56,13 @@ Revision History.
 	- GPU object space solver (beta)
 	- fluids can interact with normal map (object space, GPU solver)
 
-## Version 2.5.0
+## [STD/HDRP] Version 2.5.0
 ### Added {docsify-ignore}
 	- dynamic wipe effect
 	- droplet pixelization for pixel style games
 	- screen rain mask
 
-## Version 2.0.0
+## [STD/HDRP] Version 2.0.0
 ### Added {docsify-ignore}
 	- Radial wind
 	- Tint color for droplets
@@ -39,7 +77,7 @@ Revision History.
 	- Enabling HDR option of camera causes an error in object space version
 	- object space version is now compatible with AURA2
 
-## Version 1.5.0
+## [STD] Version 1.5.0
 ### Added {docsify-ignore}
 	- Solver core is completely refactored
 	- Object space raindrop solver (Non-physical Accuracy) [Preview]
@@ -49,7 +87,7 @@ Revision History.
 	- More accurate screen distortion result based on calculated normal map
 	- A crash problem caused by running multiple solvers simultaneously
 
-## Version 1.0.1
+## [STD] Version 1.0.1
 ### Added {docsify-ignore}
 	- Wind turbulence
 	- Foreground water droplets blur
@@ -62,12 +100,12 @@ Revision History.
 	- Wrong visual effect when screen scale is not 16:9
 	- Drawcall reduced
 	
-## Version 0.6.0
+## [STD/Lite] Version 0.6.0
 ### Added {docsify-ignore}
 	- Tint color
 	- Wind
 
-## Version 0.5.0
+## [STD/Lite] Version 0.5.0
 ### First Release {docsify-ignore}
 	- Base functions implemented
 

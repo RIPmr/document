@@ -2,6 +2,11 @@
 
 FAQ.
 
+## Q: Why I can't see particles behind RaindropFX glass in URP?
+### A:  {docsify-ignore}
+	Because particles are transparent and rendered after RaindropFX by default settings, please try to change ¡®Render Pass Event¡¯ to ¡®After Rendering Transparent¡¯ in render features. (This also applies when you cannot see other transparent objects)
+
+<div align=center><img width="50%" src="_pics/RFXU_151/RFXU151_PIC_ (1).png"/></div>
 
 ## Q: I can't see raindrops in HDRP even if I have added the post effect to volume component?
 ### A:  {docsify-ignore}
