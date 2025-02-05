@@ -1,50 +1,37 @@
-﻿# RaindropFX Pro URP (1.51)
+﻿# RaindropFX Pro HDRP (3.50)
 
-Easy to use realistic camera lens raindrop animation effects for URP 10.3.1+.
+Easy to use realistic camera lens raindrop animation effects for Unity 6/HDRP 17.0.3+.
+
+!> **Important** This version of the plugin only supports Unity6, as Unity officially announced that they will merge the URP/HDRP and standard rendering pipelines into a unified rendering pipeline in Unity7. Therefore, this version of the plugin will not continue to be supported in future Unity upgrades.
 
 ## 1 Getting started
 ### 1-1 Download RaindropFX to your project
 !> **Important** If you have any old version RaindropFX, delete it first.
 
-1. Please make sure your project is using universal rendering pipeline;
+1. Please make sure your project is using high-definition rendering pipeline;
 2. If you have any old version RaindropFX, delete it;
-3. Then download and import new version RaindropFX URP package to your project.
+3. Then download and import new version RaindropFX HDRP package to your project.
 
 ### 1-1 Post processing stack setup
-1. Find ‘Forward Renderer Data’ asset (located at ‘Settings’ folder) of your rendering pipeline, then add ‘RFX Blur Pass’ and ‘Raindrop FX_URP Render Feature’ to ‘Renderer Features’:
+Go to ‘Edit/Project Settings…’, then add ‘RaindropFX_GPU’ and ‘RaindropFX_HDRP’ to ‘Graphics/Custom Post Process Order/After Post Process’:
 
-<div align=center><img width="60%" src="_pics/RFXU_100/RFXU100_PIC_ (1).png"/></div>
+<div align=center><img width="90%" src="_pics/RFXHD_350/1.png"/></div>
 
-Note that in new version Unity there maybe multiple ‘Forward Renderer Data’ asset in your rendering pipeline (located at ‘Settings’ folder), they are used in different graphics quality, please add RaindropFX render features too all of them to ensure you can see the effect in every quality level.
-
-<div align=center><img width="70%" src="_pics/RFXU_151/1.png"/></div>
-<div align=center><img width="60%" src="_pics/RFXU_100/RFXU100_PIC_ (2).png"/></div>
-
-2. Then assign ‘Blur’ material located at ‘RaindropFXPro_URP/Resources/Materials’ to ‘Blur Material’ slot of ‘RFX Blur Pass’;
-<div align=center><img width="90%" src="_pics/RFXU_100/RFXU100_PIC_ (29).png"/></div>
-
-3. Finally assign ‘Screen Blend’ shader located at ‘RaindropFXPro_URP/Shaders/Screen’ to ‘Blend Shader’ slot of ‘RaindropFX_URP Render Feature’.
-<div align=center><img width="90%" src="_pics/RFXU_100/RFXU100_PIC_ (30).png"/></div>
-
-4. Finally, add one 'Render Objects' to your ‘Forward Renderer Data’ asset, then set lightmode to 'Grab', just like the screenshot below. 
-
-<div align=center><img width="60%" src="_pics/RFXU_151/2.png"/></div>
-
-## 2 CPU RAINDROP SOLVER
+## 2 CPU raindrop solver
 ### 2-1 Screen space version
 #### Volume setup {docsify-ignore}
 Select any object in your scene, and add a ‘Volume’ component.
 
-<div align=center><img width="60%" src="_pics/RFXU_100/RFXU100_PIC_ (3).png"/></div>
+<div align=center><img width="40%" src="_pics/RFXHD_200/hd (3).png"/></div>
 
 #### Raindrop effect setup {docsify-ignore}
-On the ‘Volume’ component, choose a profile in the profile field or create a new profile, then click ‘Add Override’, go to ‘Post-processing -> RaindropFX -> RaindropFX_URP’ to add the raindrop effect.
+On the ‘Volume’ component, choose a profile in the profile field or create a new profile, then click ‘Add Override’, go to ‘Post-processing -> RaindropFX -> RaindropFX_HDRP’ to add the raindrop effect.
 
-<div align=center><img width="60%" src="_pics/RFXU_100/RFXU100_PIC_ (4).png"/></div>
+<div align=center><img width="40%" src="_pics/RFXHD_300/1-2.png"/></div>
 
-Raindrop texture must be set before you can use RaindropFX. Find the raindrop texture at ‘RaindropFX_URP/Resources/Textures/raindrop_a’. Or you can use your own raindrop texture.
+Raindrop texture must be set before you can use RaindropFX. Find the raindrop texture at ‘RaindropFX_HDRP/Resources/Textures/raindrop_a’. Or you can use your own raindrop texture.
 
-<div align=center><img width="90%" src="_pics/RFXU_100/RFXU100_PIC_ (5).png"/></div>
+<div align=center><img width="90%" src="_pics/RFXHD_200/hd (5).png"/></div>
 
 Now you can see the raindrop effect in your scene.
 
@@ -58,21 +45,17 @@ If you want to enable wipe effect, first add ‘Wiper’ component to your main 
 
 Add your ‘Volume’ component to ‘Post Volumn’, then add all the wipers to ‘Wipers’ (you can set the size of the ‘Wipers’ to any number you like. For example, if you want to use two wipers, set it to 2, then drag and drop your wipers into the slots);
 
-<div align=center><img width="90%" src="_pics/RFXU_100/RFXU100_PIC_ (9).png"/></div>
-
 All wipers must be placed in a specific layer. You can directly enter a layer number that has never been used in the scene to the ‘Cull Layer’ slot, and then the script will automatically move all the wipers to this layer at the beginning of the game without manual setting;
 
 !>The script don't handle child objects. If your wiper contains child objects, please set layer of them manually.
 
-!>If you want to hide the wipers in the game view, just exclude the cull layer in your main camera.
+<div align=center><img width="70%" src="_pics/RFXHD_300/2-2.png"/></div>
 
-<div align=center><img width="60%" src="_pics/RFXU_100/RFXU100_PIC_ (10).png"/></div>
+Assign ‘Wiper’ material (located at: RaindropFX_HDRP/Resources/Materials) to all of your wipers. Or you can use your own material. The color of wiper from black to white represents different wipe power, and white represents complete wipe. You can also use alpha texture to change the shape of your wiper;
 
-Assign ‘Wiper’ material (located at: RaindropFX_URP/Resources/Materials) to all of your wipers. Or you can use your own material. The color of wiper from black to white represents different wipe power, and white represents complete wipe;
+<div align=center><img width="70%" src="_pics/RFXHD_300/3.png"/></div>
 
-<div align=center><img width="90%" src="_pics/RFXU_100/RFXU100_PIC_ (11).png"/></div>
-
-Then tick the ‘Wipe Effect’ in the ‘Raindrop FX_URP’ in the ‘Volume’ component;
+Then tick the ‘Wipe Effect’ in the ‘Raindrop FX_HDRP’ in the ‘Volume’ component;
 
 <div align=center><img width="70%" src="_pics/RFXHD_300/4.png"/></div>
 
@@ -80,23 +63,17 @@ Finally, run your game and drag your wiper, you’ll see the wipe effect. The wi
 
 <div align=center><img width="70%" src="_pics/RFXHD_300/4-2.png"/></div>
 
-#### 4. About background blur {docsify-ignore}
-Different from STD and HDRP version, in URP you should change background blur weight in ‘Forward Renderer’ asset.
-Just increase the ‘Blur Iteration’ and ‘Down Sampling’ value, the higher these two value, more blurred the background is.
-
-!>increase ‘Blur Iteration’ value will give you smooth blurred background but will increase performance cost; increase ‘Blur Iteration’ value will give you low quality block like blur, but will not increase performance cost.
-
-<div align=center><img width="60%" src="_pics/RFXU_100/RFXU100_PIC_ (14).png"/></div>
+!>Once you run your game, ‘Wiper’ component will automatically create a LUT camera and attach it as a child object of your main camera, the LUT camera is used for rendering wipe mask and will be configured automatically by RaindropFX, so normally you just need to leave it here and don’t touch it.
 
 ### 2-2 Object space version
 #### Setup material & solver {docsify-ignore}
-Create a new material, change shader type to ‘Custom/RaindropFX/WetSurfaceURP’’;
+Create a new material, change shader type to ‘Custom/RaindropFX/WetSurface_HDRP’;
 
-<div align=center><img width="60%" src="_pics/RFXU_100/RFXU100_PIC_ (15).png"/></div>
+<div align=center><img width="60%" src="_pics/RFXHD_200/hd (11).png"/></div>
 
 Add ‘Material Linker’ to your model object. ‘Material Linker’ will try to find the target material (main material of your model) automatically, if the component failed to get the correct material or if you changed the material of model after the script have been added, please reset ‘Target Mat’ manually.
 
-<div align=center><img width="60%" src="_pics/RFXU_100/RFXU100_PIC_ (16).png"/></div>
+<div align=center><img width="60%" src="_pics/RFXHD_200/hd (12).png"/></div>
 
 Add a droplet texture to ‘Raindrop Tex_alpha’.
 
@@ -106,8 +83,8 @@ Now you can see raindrops on your model surface.
 
 <div align=center><img width="80%" src="_pics/RFXHD_200/hd (13).png"/></div>
 
-#### About physical calculation {docsify-ignore}
-!>The default physical calculation of RaindropFX is based on the UV space, which means that the water droplets will flow downward along the V-axis of the UV space, that is to say, water droplets' movement depends entirely on the way of UV division.
+#### Default physical calculation (without using force LUT) {docsify-ignore}
+!>The default physical calculation of RaindropFX is based on the UV space, which means that if force LUT is not used, the water droplets will flow downward along the V-axis of the UV space, which water droplets' movement depends entirely on the way of UV division.
 
 As shown in the figure below, there are two different UV division methods for the same cylinder model:
 
@@ -117,6 +94,34 @@ As shown in the figure below, there are two different UV division methods for th
 As the figure above shows, left side is the computed raindrop texture. Because of that the flow direction of raindrops is roughly along the v-axis of the UV space, so if we apply the texture to the middle cylinder (with UV division method (a)), the result will be correct; But if we apply the texture to the right cylinder (with UV division method (b)), the result will be wrong.
 
 !>Therefore, in the process of UV division, please try to keep the UV island orientation consistent and try to divide the UV into a whole piece of island.
+
+#### Setup force LUT {docsify-ignore}
+RaindropFX can automatically generate a force LUT for any custom mesh. Force LUT describes the external force at each position of the mesh surface under current transform:
+
+<div align=center><img width="80%" src="_pics/RFXHD_300/6-2.png"/></div>
+
+!>Force LUT makes the physical calculation of raindrops no longer depend on UV space. Mesh can move, scale and rotate freely in the scene, but it will bring additional performance overhead.
+
+1. First add a ‘Force LUT Generator’ component to your object;
+2. Another camera is needed for generate force LUT, tick ‘Auto LUT Camera’ so that RaindropFX will generate a default LUT camera for you (it will be attached as a child object of your object);
+3. During the game is running, once the transform of the target object changes, LUT camera will bake a new force LUT. In order to improve the performance, it is suggested to set a smaller resolution for the force LUT, such as 128 x 128. But if you have a lot of details on the surface of the object and need higher fineness, please using a larger resolution.
+
+!>The object must be placed in a separate layer and kept within the visible range of LUT camera.
+
+<div align=center><img width="50%" src="_pics/RFXHD_300/7.png"/></div>
+
+!>Force LUT needs to record force information in the alpha channel of the render texture, but the texture format used in the default setting of HDRP does not have alpha channel. Please modify the ‘Color Buffer Format’ setting in HDRP:
+
+<div align=center><img width="50%" src="_pics/RFXHD_300/8.png"/></div>
+
+Default settings (HDRP 17.0.3) are located at:
+ - ‘Assets/Settings/HDRP Balanced’;
+ - ‘Assets/Settings/HDRP High Fidelity’;
+ - ‘Assets/Settings/HDRP Performant’;
+
+!>But if you are using your own custom settings file, or using another version of HDRP, they may not located here, please find them and modify the setting by yourself.
+
+<div align=center><img width="60%" src="_pics/RFXHD_350/2.png"/></div>
 
 #### Setup wipe effect {docsify-ignore}
 1. Similar with the screen space version, the object space version wipe effect also needs another camera to render a wipe mask. So first you need to create another camera, delete ‘audio listener’, then adjust the view of the camera to matching the wipe area:
@@ -132,13 +137,6 @@ As the figure above shows, left side is the computed raindrop texture. Because o
 3. Tick the ‘Wipe Effect’ in the ‘Volume’ component, then just run your game.
 
 <div align=center><img width="60%" src="_pics/RFXHD_300/12.png"/></div>
-
-#### About roughness of surface rain material {docsify-ignore}
-Different from STD and HDRP version, in URP, final roughness value = material roughness value * roughness value in ‘RFX Blur Pass’：
-
-!>increase ‘Blur Iteration’ value will give you smooth blurred background but will increase performance cost; increase ‘Blur Iteration’ value will give you low quality block like blur, but will not increase performance cost.
-<div align=center><img width="60%" src="_pics/RFXU_100/RFXU100_PIC_ (14).png"/></div>
-<div align=center><img width="60%" src="_pics/RFXU_100/RFXU100_PIC_ (26).png"/></div>
 
 ### 2-3 System options
 <center>
@@ -989,7 +987,7 @@ mso-border-left-alt:none;border-right:1.0000pt solid rgb(190,190,190);mso-border
 border-top:none;mso-border-top-alt:0.5000pt solid rgb(190,190,190);border-bottom:1.0000pt solid rgb(190,190,190);
 mso-border-bottom-alt:0.5000pt solid rgb(190,190,190);">
 					<p class=MsoNormal style="margin-top:0.0000pt;margin-bottom:0.0000pt;">
-						<b><span style="font-family:'微软雅黑 Light';font-weight:bold;font-size:10.5000pt;">Blur Iteration</span>
+						<b><span style="font-family:'微软雅黑 Light';font-weight:bold;font-size:10.5000pt;">Invert blur</span>
 						</b><span style="font-family:'微软雅黑 Light';font-weight:normal;font-size:10.5000pt;"><o:p></o:p></span>
 					</p>
 				</td>
@@ -997,7 +995,7 @@ mso-border-bottom-alt:0.5000pt solid rgb(190,190,190);">
 mso-border-left-alt:none;border-right:1.0000pt solid rgb(190,190,190);mso-border-right-alt:0.5000pt solid rgb(190,190,190);
 border-top:none;mso-border-top-alt:0.5000pt solid rgb(190,190,190);border-bottom:1.0000pt solid rgb(190,190,190);
 mso-border-bottom-alt:0.5000pt solid rgb(190,190,190);">
-					<p class=MsoNormal style="margin-top:0.0000pt;margin-bottom:0.0000pt;"><span style="font-family:'微软雅黑 Light';font-size:9.0000pt;">A</span><span style="mso-spacerun:'yes';font-family:'微软雅黑 Light';font-size:9.0000pt;">djust blur strength.</span><span style="font-family:'微软雅黑 Light';font-size:9.0000pt;"><o:p></o:p></span></p>
+					<p class=MsoNormal style="margin-top:0.0000pt;margin-bottom:0.0000pt;"><span style="font-family:'微软雅黑 Light';font-size:9.0000pt;">S</span><span style="mso-spacerun:'yes';font-family:'微软雅黑 Light';font-size:9.0000pt;">witch between background blur and foreground droplet blur.</span><span style="font-family:'微软雅黑 Light';font-size:9.0000pt;"><o:p></o:p></span></p>
 				</td>
 			</tr>
 			<tr style="height:31.2000pt;">
@@ -1019,54 +1017,104 @@ mso-border-bottom-alt:0.5000pt solid rgb(190,190,190);background:rgb(241,241,241
 					<p class=MsoNormal style="margin-top:0.0000pt;margin-bottom:0.0000pt;"><span style="mso-spacerun:'yes';font-family:'微软雅黑 Light';font-size:9.0000pt;">Adjust focal length.</span><span style="font-family:'微软雅黑 Light';font-size:9.0000pt;"><o:p></o:p></span></p>
 				</td>
 			</tr>
+			<tr style="height:31.2000pt;">
+				<td width=181 valign=top style="width:135.9500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:none;
+mso-border-left-alt:none;border-right:1.0000pt solid rgb(190,190,190);mso-border-right-alt:0.5000pt solid rgb(190,190,190);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(190,190,190);border-bottom:1.0000pt solid rgb(190,190,190);
+mso-border-bottom-alt:0.5000pt solid rgb(190,190,190);background:rgb(255,255,255);">
+					<p class=MsoNormal style="margin-top:0.0000pt;margin-bottom:0.0000pt;">
+						<b>
+							<span style="mso-spacerun:'yes';font-family:'微软雅黑 Light';font-weight:bold;
+font-size:10.5000pt;">Blur iteration</span>
+						</b><span style="font-family:'微软雅黑 Light';font-weight:normal;font-size:10.5000pt;"><o:p></o:p></span>
+					</p>
+				</td>
+				<td width=329 valign=top style="width:247.2500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:none;
+mso-border-left-alt:none;border-right:1.0000pt solid rgb(190,190,190);mso-border-right-alt:0.5000pt solid rgb(190,190,190);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(190,190,190);border-bottom:1.0000pt solid rgb(190,190,190);
+mso-border-bottom-alt:0.5000pt solid rgb(190,190,190);background:rgb(255,255,255);">
+					<p class=MsoNormal style="margin-top:0.0000pt;margin-bottom:0.0000pt;"><span style="mso-spacerun:'yes';font-family:'微软雅黑 Light';font-size:9.0000pt;">Adjust blur strength.</span><span style="font-family:'微软雅黑 Light';font-size:9.0000pt;"><o:p></o:p></span></p>
+				</td>
+			</tr>
+			<tr style="height:31.2000pt;">
+				<td width=181 valign=top style="width:135.9500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:none;
+mso-border-left-alt:none;border-right:1.0000pt solid rgb(190,190,190);mso-border-right-alt:0.5000pt solid rgb(190,190,190);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(190,190,190);border-bottom:1.0000pt solid rgb(190,190,190);
+mso-border-bottom-alt:0.5000pt solid rgb(190,190,190);background:rgb(241,241,241);">
+					<p class=MsoNormal style="margin-top:0.0000pt;margin-bottom:0.0000pt;">
+						<b>
+							<span style="mso-spacerun:'yes';font-family:'微软雅黑 Light';font-weight:bold;
+font-size:10.5000pt;">Edge softness</span>
+						</b><span style="font-family:'微软雅黑 Light';font-weight:normal;font-size:10.5000pt;"><o:p></o:p></span>
+					</p>
+				</td>
+				<td width=329 valign=top style="width:247.2500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:none;
+mso-border-left-alt:none;border-right:1.0000pt solid rgb(190,190,190);mso-border-right-alt:0.5000pt solid rgb(190,190,190);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(190,190,190);border-bottom:1.0000pt solid rgb(190,190,190);
+mso-border-bottom-alt:0.5000pt solid rgb(190,190,190);background:rgb(241,241,241);">
+					<p class=MsoNormal style="margin-top:0.0000pt;margin-bottom:0.0000pt;"><span style="mso-spacerun:'yes';font-family:'微软雅黑 Light';font-size:9.0000pt;">Edge softness of depth effect.</span><span style="font-family:'微软雅黑 Light';font-size:9.0000pt;"><o:p></o:p></span></p>
+				</td>
 			</tr>
 		</table>
 	</center>
 
 
-## 3 GPU RAINDROP SOLVER (BETA)
+
+
+
+
+
+
+
+
+
+## 3 GPU raindrop solver (BETA)
 ### 3-1 Screen space version
-#### Pipeline setup {docsify-ignore}
-Add ‘Raindrop FX_GPU (Raindrop FX_GPU Render Feature)’ to your ‘Forward Renderer Data’ asset, and assign ‘ScrBlend_GPU’ shader located at ‘RaindropFXPro_URP/Shaders/GPUTools’:
-> please add ‘Raindrop FX_GPU (Raindrop FX_GPU Render Feature)’ render feature to all of your ‘Forward Renderer Data’ asset for different quality levels, refer to <b>section 1</b>
-
-<div align=center><img width="60%" src="_pics/RFXU_151/3.png"/></div>
-<div align=center><img width="60%" src="_pics/RFXU_151/4.png"/></div>
-
 #### Volume setup {docsify-ignore}
-Select any object in your scene, and add a ‘Volume’ component. 
+Select any object in your scene, and add a ‘Volume’ component.
 
 #### Raindrop effect setup {docsify-ignore}
-On the ‘Volume’ component, choose a profile in the profile field or create a new profile, then click ‘Add Override’, go to ‘Post-processing -> RaindropFX_GPU’ to add the raindrop effect.
+On the ‘Volume’ component, choose a profile in the profile field or create a new profile, then click ‘Add Override’, go to ‘Post-processing -> RaindropFX -> RaindropFX_GPU’ to add the raindrop effect.
 
-<div align=center><img width="100%" src="_pics/RFXU_151/5.png"/></div>
+<div align=center><img width="80%" src="_pics/RFXHD_350/3.png"/></div>
 
-Noise texture must be set before you can use RaindropFX. Find the default blue noise texture at ‘RaindropFX_URP/Resources/Textures/blueNoise’. Noise texture is used to specify the position of raindrops which are randomly generated, so you can use your own noise texture to change the distribution of raindrops.
-	Now you can see the raindrop effect in your scene. 
+Noise texture must be set before you can use RaindropFX. Find the default blue noise texture at ‘RaindropFX_HDRP/Resources/Textures/blueNoise’. Noise texture is used to specify the position of raindrops which are randomly generated, so you can use your own noise texture to change the distribution of raindrops.
 
-> Note that the GPU version of the simulation results are different from the CPU version, the water trail of GPU version is more continuous.
+Now you can see the raindrop effect in your scene. 
 
-|Category|Parameter|Description|
-|----|----|----|
-|GPU Only Params|Noise Tex|Noise texture is used to specify the position of raindrops which are randomly generated.|
-|GPU Only Params|Static Lifetime/Dynamic Lifetime|Controls the life length of the raindrops. The larger the value, the longer the tail of the drops, and the longer it can exist on the screen.|
-|GPU Only Params|Static Spawn Rate/Dynamic Spawn Rate|The higher the value, the more droplets are generated per frame.|
-|GPU Only Params|Sharpen Edge|The edge of GPU generated droplets is not as sharp as that of CPU version, so a cutting parameter is added to sharpen the edge and optimize the visual effect.|
+<div align=center><img width="80%" src="_pics/RFXHD_300/14.png"/></div>
+
+!>Note that the GPU version of the simulation results are different from the CPU version, the water trail of GPU version is more continuous.
+
+### 3-2 Object space version
+Select any object in your scene, add a ‘Surface_Solver_GPU’ component and a ‘Force LUT Generator’ to the object, then assign default ‘blueNoise’ texture to ‘Noise Tex’ slot (or any custom noise texture): 
+
+<div align=center><img width="50%" src="_pics/RFXHD_350/4.png"/></div>
+
+Just like the CPU version solver, you need to setup your force LUT. Please refer to section <strong>2-2 3.Setup force LUT</strong> for the steps. Then create a new material and change the shader type to ‘Custom/RaindropFX/WetSurface_GPU’, assign it to your object:
+
+<div align=center><img width="50%" src="_pics/RFXHD_300/16.png"/></div>
+
+Now run your game and you will be able to see the raindrops on your object surface:
+
+<div align=center><img width="80%" src="_pics/RFXHD_300/17.png"/></div>
+
+It’s possible to set an extra normal map for object surface and make raindrops interact with the surface normal in GPU solver. Just drag and drop you normal texture to ‘Normal Map’ slot, and you will see the effect.
+
+<div align=center><img width="80%" src="_pics/RFXHD_300/18.png"/></div>
+
+Moreover, tick ‘Debug’ option in ‘Surface_Solver_GPU’ component and you will see the effect more clearly, so that you can adjust your normal map easily.
+
+<div align=center><img width="80%" src="_pics/RFXHD_300/19.png"/></div>
 
 ## 4 Tips
 
-> 1、If you can see the raindrop effect in the editor in play mode but can not see it in a build：
+> If you can see the raindrop effect in the editor in play mode but can not see it in a build：
 
-try to go to 'ProjectSettings->Graphics' in your Unity editor then add all the shaders of RaindropFX (located at : RaindropFX_URP/Shaders) to 'always included shaders', then rebuild your game and try it again.
+try to go to 'ProjectSettings->Graphics' in your Unity editor then add all the shaders of RaindropFX (located at : RaindropFX_HDRP/Shaders) to 'always included shaders', then rebuild your game and try it again.
 
 <div align=center><img width="70%" src="_pics/RFXHD_300/20.png"/></div>
-<div align=center><img width="70%" src="_pics/RFXU_100/RFXU100_PIC_ (28).png"/></div>
-
-> 2、Why I can’t see particles behind RaindropFX glass?
-
-Because particles are transparent and rendered after RaindropFX by default settings, please try to change ‘Render Pass Event’ to ‘After Rendering Transparent’ in render features. (This also applies when you cannot see other transparent objects)
-
-<div align=center><img width="70%" src="_pics/RFXU_151/RFXU151_PIC_ (1).png"/></div>
+<div align=center><img width="70%" src="_pics/RFXHD_300/21.png"/></div>
 
 ## Support
 If you have any questions, comments, or requests for new features, please email me directly at: hztmailbox@gmail.com.

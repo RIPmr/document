@@ -1,6 +1,8 @@
-﻿# RaindropFX Pro URP (1.51)
+﻿# RaindropFX Pro URP (1.80)
 
-Easy to use realistic camera lens raindrop animation effects for URP 10.3.1+.
+Easy to use realistic camera lens raindrop animation effects for Unity 6/URP 17+.
+
+!> **Important** This version of the plugin only supports Unity6, as Unity officially announced that they will merge the URP/HDRP and standard rendering pipelines into a unified rendering pipeline in Unity7. Therefore, this version of the plugin will not continue to be supported in future Unity upgrades.
 
 ## 1 Getting started
 ### 1-1 Download RaindropFX to your project
@@ -10,25 +12,13 @@ Easy to use realistic camera lens raindrop animation effects for URP 10.3.1+.
 2. If you have any old version RaindropFX, delete it;
 3. Then download and import new version RaindropFX URP package to your project.
 
-### 1-1 Post processing stack setup
-1. Find ‘Forward Renderer Data’ asset (located at ‘Settings’ folder) of your rendering pipeline, then add ‘RFX Blur Pass’ and ‘Raindrop FX_URP Render Feature’ to ‘Renderer Features’:
+### 1-1 Render Features setup
+Find ‘PC_Renderer’ (if your target platform is PC) or ‘Mobile_Renderer’ (if your target platform is mobile devices) Universal Renderer Data (located at ‘Settings’ folder) of your rendering pipeline, then add ‘Raindrop FX_URP Render Feature’ to the render features list:
 
-<div align=center><img width="60%" src="_pics/RFXU_100/RFXU100_PIC_ (1).png"/></div>
+<div align=center><img width="60%" src="_pics/RFXU_180/1.png"/></div>
 
-Note that in new version Unity there maybe multiple ‘Forward Renderer Data’ asset in your rendering pipeline (located at ‘Settings’ folder), they are used in different graphics quality, please add RaindropFX render features too all of them to ensure you can see the effect in every quality level.
+!> **Important** If your project is using custom Universal Renderer Data, the name and location of the Universal Renderer Data may be different from the default values given above.
 
-<div align=center><img width="70%" src="_pics/RFXU_151/1.png"/></div>
-<div align=center><img width="60%" src="_pics/RFXU_100/RFXU100_PIC_ (2).png"/></div>
-
-2. Then assign ‘Blur’ material located at ‘RaindropFXPro_URP/Resources/Materials’ to ‘Blur Material’ slot of ‘RFX Blur Pass’;
-<div align=center><img width="90%" src="_pics/RFXU_100/RFXU100_PIC_ (29).png"/></div>
-
-3. Finally assign ‘Screen Blend’ shader located at ‘RaindropFXPro_URP/Shaders/Screen’ to ‘Blend Shader’ slot of ‘RaindropFX_URP Render Feature’.
-<div align=center><img width="90%" src="_pics/RFXU_100/RFXU100_PIC_ (30).png"/></div>
-
-4. Finally, add one 'Render Objects' to your ‘Forward Renderer Data’ asset, then set lightmode to 'Grab', just like the screenshot below. 
-
-<div align=center><img width="60%" src="_pics/RFXU_151/2.png"/></div>
 
 ## 2 CPU RAINDROP SOLVER
 ### 2-1 Screen space version
@@ -86,7 +76,7 @@ Just increase the ‘Blur Iteration’ and ‘Down Sampling’ value, the higher
 
 !>increase ‘Blur Iteration’ value will give you smooth blurred background but will increase performance cost; increase ‘Blur Iteration’ value will give you low quality block like blur, but will not increase performance cost.
 
-<div align=center><img width="60%" src="_pics/RFXU_100/RFXU100_PIC_ (14).png"/></div>
+<div align=center><img width="60%" src="_pics/RFXU_180/2.png"/></div>
 
 ### 2-2 Object space version
 #### Setup material & solver {docsify-ignore}
@@ -137,8 +127,7 @@ As the figure above shows, left side is the computed raindrop texture. Because o
 Different from STD and HDRP version, in URP, final roughness value = material roughness value * roughness value in ‘RFX Blur Pass’：
 
 !>increase ‘Blur Iteration’ value will give you smooth blurred background but will increase performance cost; increase ‘Blur Iteration’ value will give you low quality block like blur, but will not increase performance cost.
-<div align=center><img width="60%" src="_pics/RFXU_100/RFXU100_PIC_ (14).png"/></div>
-<div align=center><img width="60%" src="_pics/RFXU_100/RFXU100_PIC_ (26).png"/></div>
+<div align=center><img width="60%" src="_pics/RFXU_180/3.png"/></div>
 
 ### 2-3 System options
 <center>
@@ -1027,11 +1016,14 @@ mso-border-bottom-alt:0.5000pt solid rgb(190,190,190);background:rgb(241,241,241
 ## 3 GPU RAINDROP SOLVER (BETA)
 ### 3-1 Screen space version
 #### Pipeline setup {docsify-ignore}
-Add ‘Raindrop FX_GPU (Raindrop FX_GPU Render Feature)’ to your ‘Forward Renderer Data’ asset, and assign ‘ScrBlend_GPU’ shader located at ‘RaindropFXPro_URP/Shaders/GPUTools’:
-> please add ‘Raindrop FX_GPU (Raindrop FX_GPU Render Feature)’ render feature to all of your ‘Forward Renderer Data’ asset for different quality levels, refer to <b>section 1</b>
 
-<div align=center><img width="60%" src="_pics/RFXU_151/3.png"/></div>
-<div align=center><img width="60%" src="_pics/RFXU_151/4.png"/></div>
+> Note: If you’ve already did this step for CPU solver, just skip this step
+
+Find ‘PC_Renderer’ (if your target platform is PC) or ‘Mobile_Renderer’ (if your target platform is mobile devices) Universal Renderer Data (located at ‘Settings’ folder) of your rendering pipeline, then add ‘Raindrop FX_URP Render Feature’ to the render features list:
+
+<div align=center><img width="60%" src="_pics/RFXU_180/1.png"/></div>
+
+!> **Important** If your project is using custom Universal Renderer Data, the name and location of the Universal Renderer Data may be different from the default values given above.
 
 #### Volume setup {docsify-ignore}
 Select any object in your scene, and add a ‘Volume’ component. 
@@ -1064,9 +1056,9 @@ try to go to 'ProjectSettings->Graphics' in your Unity editor then add all the s
 
 > 2、Why I can’t see particles behind RaindropFX glass?
 
-Because particles are transparent and rendered after RaindropFX by default settings, please try to change ‘Render Pass Event’ to ‘After Rendering Transparent’ in render features. (This also applies when you cannot see other transparent objects)
+Because RaindropFX's glass material itself is in transparent render queue, so RaindropFX will capture a screen texture before rendering transparent objects, and then use this texture to render transparent glass (otherwise if we capture the screen texture after transparent queue, the glass itself will be rendered into the texture, and will refract itself, which will result in artifacts). 
+The particle system is also a transparent object, so it will not exist in RaindropFX's screen texture. One possible solution is: use alpha cutout instead and set its render queue to before the transparent (<3000) in your particle material. 
 
-<div align=center><img width="70%" src="_pics/RFXU_151/RFXU151_PIC_ (1).png"/></div>
 
 ## Support
 If you have any questions, comments, or requests for new features, please email me directly at: hztmailbox@gmail.com.

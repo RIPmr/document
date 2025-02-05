@@ -6,7 +6,7 @@ Easy to use realistic camera lens raindrop animation effects for URP 10.3.1+.
 ### 1-1 Download RaindropFX to your project
 !> **Important** If you have any old version RaindropFX, delete it first.
 
-1. Please make sure your project is using high-definition rendering pipeline;
+1. Please make sure your project is using universal rendering pipeline;
 2. If you have any old version RaindropFX, delete it;
 3. Then download and import new version RaindropFX URP package to your project.
 

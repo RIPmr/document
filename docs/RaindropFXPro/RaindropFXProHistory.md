@@ -2,6 +2,27 @@
 
 Revision History.
 
+## [URP] Version 1.8.0
+### Added {docsify-ignore}
+	- Support for Unity 6/URP 17.0+ added
+	- Simplify the process of configuring Render Features
+
+### Fixed {docsify-ignore}
+	- GPU solver with uneven raindrop density
+	- Several shader warnings
+	- The downsampling parameter of the screen space version solver are not taking effect correctly
+	- Optimize the cutout effect of GPU raindrops
+
+## [HDRP] Version 3.5.0
+### Added {docsify-ignore}
+	- Support for Unity 6/URP 17.0+ added
+	- Add parameter classification to the object surface raindrop solver component panel
+
+### Fixed {docsify-ignore}
+	- GPU solver with uneven raindrop density
+	- Several shader warnings
+	- The downsampling parameter of the screen space version solver are not taking effect correctly
+
 ## [URP] Version 1.5.1
 ### Added {docsify-ignore}
 	- Support for URP 14.0+ added
