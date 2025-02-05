@@ -15,7 +15,7 @@ Revision History.
 
 ## [HDRP] Version 3.5.0
 ### Added {docsify-ignore}
-	- Support for Unity 6/URP 17.0+ added
+	- Support for Unity 6/HDRP 17.0.3+ added
 	- Add parameter classification to the object surface raindrop solver component panel
 
 ### Fixed {docsify-ignore}
